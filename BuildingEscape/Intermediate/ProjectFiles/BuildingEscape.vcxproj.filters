@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<None Include="..\..\BuildingEscape.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{1981C377-C36A-4AB7-9A59-77C9E106BA26}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\BuildingEscape.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\BuildingEscapeEditor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{6C08DC67-CDDD-4EFC-8FDA-43276DFE87C0}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\BuildingEscape">
+			<UniqueIdentifier>{DF9035FB-E7B9-4C0A-B5E6-F09293FEAB83}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\BuildingEscape\BuildingEscape.Build.cs">
+			<Filter>Source\BuildingEscape</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\BuildingEscape\BuildingEscape.cpp">
+			<Filter>Source\BuildingEscape</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\BuildingEscape\BuildingEscape.h">
+			<Filter>Source\BuildingEscape</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\BuildingEscape\BuildingEscapeGameModeBase.cpp">
+			<Filter>Source\BuildingEscape</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\BuildingEscape\BuildingEscapeGameModeBase.h">
+			<Filter>Source\BuildingEscape</Filter>
+		</ClInclude >
+	</ItemGroup>
+</Project>
