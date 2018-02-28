@@ -2,6 +2,7 @@
 
 #include "OpenDoor.h"
 #include "Gameframework/actor.h"
+#include "Components/PrimitiveComponent.h"
 #include "Engine/World.h"
 
 
@@ -19,7 +20,6 @@ UOpenDoor::UOpenDoor()
 void UOpenDoor::BeginPlay()
 {
 	Super::BeginPlay();
-	ActorThatOpens = GetWorld()->GetFirstPlayerController()->GetPawn();
 	Owner = GetOwner();
 }
 
@@ -38,7 +38,7 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-	if (PresurePlate->IsOverlappingActor(ActorThatOpens))
+	if (GetTotalMassonPlate() > 30.f)
 	{
 		OpenDoor();
 		LastDoorOpenTime = GetWorld()->GetTimeSeconds();
@@ -48,7 +48,20 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 	{
 		CloseDoor();
 	}
-	
-	
 }
 
+float UOpenDoor::GetTotalMassonPlate()
+{
+	float TotalMass = 0;
+
+	TArray<AActor*> OverlapingActors;
+	PresurePlate->GetOverlappingActors(OverlapingActors);
+
+	for (const auto* Actor: OverlapingActors)
+	{
+		TotalMass += Actor->FindComponentByClass<UPrimitiveComponent>()->GetMass();
+		UE_LOG(LogTemp, Warning, TEXT("%s on PreassurePLate"),*Actor->GetName())
+	}
+
+	return TotalMass;
+}
